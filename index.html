@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<head>
+    <title>Solicitud de Empleo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/functions.js"></script>
+</head>
+<body>
+    <form method="post" onchange=validateForm();>
+        <section id="principal">
+            <table border="1px">
+                <tr>
+                    <th rowspan="5" style="background-color: #63543D;">
+                        <h1>Solicitud de Empleo</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" name="fecha" id="fecha" required>
+                    </td>
+                    <th rowspan="5">
+                        <textarea></textarea>
+                    </th>
+                </tr>
+                <tr>
+                   <td>
+                          <label for="sueldodeseado">Sueldo Mensual Deseado:</label>
+                          <input type="number" name="sueldodeseado" id="sueldodeseado" required>
+                   </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sueldoaceptado">Sueldo Mensual Aprobado:</label>
+                        <input type="number" name="sueldoaceptado" id="sueldoaceptado" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fechacont">Fecha de Contratacion:</label>
+                        <input type="date" name="fechacont" id="fechacont" required>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section id="personal">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <table border="1px">
+                    <tr>
+                        <td>
+                            <input type="text" name="apellidoP" id="apellidoP" placeholder="Apellido Paterno" required>
+                            <input type="text" name="apellidoM" id="apellidoM" placeholder="Apellido Materno" required>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        </td>
+                        <td>
+                            <input type="number" name="edad" id="edad" placeholder="Edad" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio" required>
+                            <input type="text" name="colonia" id="colonia" placeholder="Colonia" required>
+                            <input type="text" name="cp" id="cp" placeholder="Codigo Postal" required>
+                        </td>
+                        <td>
+                            <input type="text" name="telefono" id="telefono" placeholder="Telefono" required>
+                            <label for="genero">Sexo:</label>
+                            <input type="radio" name="genero" id="genero_m" value="M">Masculino
+                            <input type="radio" name="genero" id="genero_f" value="F">Femenino
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad,Estado" required>
+                            <input type="text" name="nacimiento" id="nacimiento" placeholder="Lugar de Nacimiento" required>
+                        </td>
+                        <td>
+                            <input type="text" name="fechanac" id="fechanac" placeholder="Fecha de Nacimiento" required>
+                            <input type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="familia">Vive con:</label>
+                            <input type="checkbox" name="familia" id="familia" value="Padres">Padres
+                            <input type="checkbox" name="familia" id="familia" value="Familia">Familia
+                            <input type="checkbox" name="familia" id="familia" value="Parientes">Parientes
+                            <input type="checkbox" name="familia" id="familia" value="Solo">Solo
+                        </td>
+                        <td>
+                            <input type="text" name="estatura" id="estatura" placeholder="Estatura" required>
+                            <input type="text" name="peso" id="peso" placeholder="Peso" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="depende">Personas que dependen de usted</label>
+                            <input type="checkbox" name="depende" id="depende" value="Hijos">Hijos
+                            <input type="checkbox" name="depende" id="depende" value="Conyuge">Conyuge
+                            <input type="checkbox" name="depende" id="depende" value="Padres">Padres
+                            <input type="checkbox" name="depende" id="depende" value="Otros">Otros
+                        </td>
+                        <td>
+                            <label for="civil">Estado Civil</label>
+                            <input type="checkbox" name="civil" id="civil" value="Soltero">Soltero
+                            <input type="checkbox" name="civil" id="civil" value="Casado">Casado
+                            <input type="checkbox" name="civil" id="civil" value="Otro">Otro
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </section>
+        <section id="documentacion">
+            <fieldset>
+                <legend>Documentacion</legend>
+                <table border="1px">
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="curp" id="curp" placeholder="CURP" required>
+                        </td>
+                        <td colspan="2">
+                            <input type="text" name="afore" id="afore" placeholder="AFORE" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="rfc" id="rfc" placeholder="RFC" required>
+                        </td>
+                        <td>
+                            <input type="text" name="nss" id="nss" placeholder="NSS" required>
+                        </td>
+                        <td>
+                            <input type="text" name="cartilla_militar" id="cartilla_militar" placeholder="Cartilla Militar" required>
+                        </td>
+                        <td>
+                            <input type="text" name="pasaporte" id="pasaporte" placeholder="Pasaporte" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="tiene_licencia_conducir">Tiene licencia de conducir:</label>
+                            <input type="radio" name="tiene_licencia_conducir" id="tiene_licencia_conducir_si" value="Si">si
+                            <input type="radio" name="tiene_licencia_conducir" id="tiene_licencia_conducir_no" value="No">no
+                        </td>
+                        <td>
+                            <input type="text" name="licencia" id="licencia" placeholder="Numero de Licencia">
+                        </td>
+                        <td colspan="2">
+                            <input type="text" name="extranjero" id="extranjero" placeholder="Documentos si es Extranjero">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="salud">
+            <fieldset>
+                <legend>Estado de Salud y Habitos Personales</legend>
+                <table border="1px">
+                    <tr>
+                        <td>
+                            <label for="estado_salud">Como considera su estado de salud actual:</label>
+                            <input type="checkbox" name="estado_salud" id="estado_salud" value="Bueno">Bueno
+                            <input type="checkbox" name="estado_salud" id="estado_salud" value="Regular">Regular
+                            <input type="checkbox" name="estado_salud" id="estado_salud" value="Malo">Malo
+                        </td>
+                        <td colspan="2">
+                            <label for="enf_cronica">Padece una enfermedad cronica: </label>
+                            <input type="radio" name="enf_cronica" id="enf_cronica_si" value="si">si
+                            <input type="radio" name="enf_cronica" id="enf_cronica_no" value="no">no
+                            <input type="text" name="enf_cronica_descripcion" id="enf_cronica_descripcion" placeholder="Describa la enfermedad cronica">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="deporte" id="deporte" placeholder="Practica algun deporte">
+                        </td>
+                        <td>
+                            <input type="text" name="club" id="club" placeholder="Pertenece a algun club social o deportivo">
+                        </td>
+                        <td>
+                            <input type="text" name="pasatiempo" id="pasatiempo" placeholder="Cual es su pasatiempo">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" name="meta" id="meta" placeholder="Cual es su meta en la vida">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="familiares">
+            <fieldset>
+                <legend>Datos Familiares</legend>
+                <table border="1px">
+                    <tr>
+                        <th>
+                            <label>Nombre</label>
+                        </th>
+                        <th>
+                            <label>Domicilio</label>
+                        </th>
+                        <th>
+                            <label>Ocupacion</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_padre" id="nombre_padre" placeholder="Padre">
+                            <input type="radio" name="padre_vivo" id="padre_vivo_si" value="Vivo">Vivo
+                            <input type="radio" name="padre_vivo" id="padre_vivo_no" value="Fallecido">Fallecido
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_padre" id="domicilio_padre" placeholder="Domicilio">
+                        </td>
+                        <td>
+                            <input type="text" name="ocupacion_padre" id="ocupacion_padre" placeholder="Ocupacion">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_madre" id="nombre_madre" placeholder="Madre">
+                            <input type="radio" name="madre_vivo" id="madre_vivo_si" value="Vivo">Vivo
+                            <input type="radio" name="madre_vivo" id="madre_vivo_no" value="Fallecido">Fallecido
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_madre" id="domicilio_madre" placeholder="Domicilio">
+                        </td>
+                        <td>
+                            <input type="text" name="ocupacion_madre" id="ocupacion_madre" placeholder="Ocupacion">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" name="nombre_edad_hijos" id="nombre_edad_hijos" placeholder="Nombre y edades de los hijos">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="escolaridad">
+            <fieldset>
+                <legend>Escolaridad</legend>
+                <table border="1px">
+                    <tr>
+                        <th>
+                            <label>Nombre</label>
+                        </th>
+                        <th>
+                            <label>Direccion</label>
+                        </th>
+                        <th>
+                            <label>De</label>
+                        </th>
+                        <th>
+                            <label>Hasta</label>
+                        </th>
+                        <th>
+                            <label>Años</label>
+                        </th>
+                        <th>
+                            <label>Titulo Recibido</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_primaria" id="nombre_primaria" placeholder="Primaria">
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_primaria" id="domicilio_primaria">
+                        </td>
+                        <td>
+                            <input type="text" name="de_primaria" id="de_primaria">
+                        </td>
+                        <td>
+                            <input type="text" name="hasta_primaria" id="hasta_primaria">
+                        </td>
+                        <td>
+                            <input type="text" name="anios_primaria" id="anios_primaria">
+                        </td>
+                        <td>
+                            <input type="text" name="titulo_primaria" id="titulo_primaria">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_secundaria" id="nombre_secundaria" placeholder="Secundaria">
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_secundaria" id="domicilio_secundaria">
+                        </td>
+                        <td>
+                            <input type="text" name="de_secundaria" id="de_secundaria">
+                        </td>
+                        <td>
+                            <input type="text" name="hasta_secundaria" id="hasta_secundaria">
+                        </td>
+                        <td>
+                            <input type="text" name="anios_secundaria" id="anios_secundaria">
+                        </td>
+                        <td>
+                            <input type="text" name="titulo_secundaria" id="titulo_secundaria">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_prepa" id="nombre_prepa" placeholder="Preparatoria">
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_prepa" id="domicilio_prepa">
+                        </td>
+                        <td>
+                            <input type="text" name="de_prepa" id="de_prepa">
+                        </td>
+                        <td>
+                            <input type="text" name="hasta_prepa" id="hasta_prepa">
+                        </td>
+                        <td>
+                            <input type="text" name="anios_prepa" id="anios_prepa">
+                        </td>
+                        <td>
+                            <input type="text" name="titulo_prepa" id="titulo_prepa">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_pro" id="nombre_pro" placeholder="Profesional">
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_pro" id="domicilio_pro">
+                        </td>
+                        <td>
+                            <input type="text" name="de_pro" id="de_pro">
+                        </td>
+                        <td>
+                            <input type="text" name="hasta_pro" id="hasta_pro">
+                        </td>
+                        <td>
+                            <input type="text" name="anios_pro" id="anios_pro">
+                        </td>
+                        <td>
+                            <input type="text" name="titulo_pro" id="titulo_pro">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre_com" id="nombre_com" placeholder="Comercial u otras">
+                        </td>
+                        <td>
+                            <input type="text" name="domicilio_com" id="domicilio_com">
+                        </td>
+                        <td>
+                            <input type="text" name="de_com" id="de_com">
+                        </td>
+                        <td>
+                            <input type="text" name="hasta_com" id="hasta_com">
+                        </td>
+                        <td>
+                            <input type="text" name="anios_com" id="anios_com">
+                        </td>
+                        <td>
+                            <input type="text" name="titulo_com" id="titulo_com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <label>Estudios que esta efectuando en la actualidad:</label>
+                            <input type="text" name="escuela" id="escuela" placeholder="Escuela">
+                            <input type="text" name="horario" id="horario" placeholder="Horario">
+                            <input type="text" name="curso" id="curso" placeholder="Curso">
+                            <input type="text" name="grado" id="grado" placeholder="Grado">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="conocimiento">
+            <fieldset>
+                <legend>Conocimientos Generales</legend>
+                <table border="1px">
+                    <tr>
+                        <td>
+                            <input type="text" name="idiomas" id="idiomas" placeholder="Que idiomas habla" required>
+                        </td>
+                        <td>
+                            <input type="text" name="ofi_fun" id="ofi_fun" placeholder="Funciones de Oficina que domina" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="ofi_maq" id="ofi_maq" placeholder="Maquina de Oficina o taller que sepa manejar" required>
+                        </td>
+                        <td>
+                            <input type="text" name="sf" id="sf" placeholder="Software que conoce" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="trabajo" id="trabajo" placeholder="Otros trabajos o funciones que domina" required>
+                        </td>
+                    </tr>   
+                </table>
+            </fieldset>
+        </section>
+        <section id="empleo">
+            <fieldset>
+                <legend>Empleo Actual y Anteriores</legend>
+                <table border="1px">
+                    <tr>
+                        <th><label>Concepto</label></th>
+                        <th><label>Actual o ultimo</label></th>
+                        <th><label>Anterior</label></th>
+                        <th><label>Anterior</label></th>
+                        <th><label>Anterior</label></th>
+                    </tr>
+                    <tr>
+                        <td><label>Tiempo que presto sus servicios</label></td>
+                        <td>
+                            <input type="text" name="desde" id="desde" placeholder="desde">
+                            <input type="text" name="hasta" id="hasta" placeholder="hasta">
+                        </td>
+                        <td>
+                            <input type="text" name="desde_2" id="desde_2" placeholder="desde">
+                            <input type="text" name="hasta_2" id="hasta_2" placeholder="hasta">
+                        </td>
+                        <td>
+                            <input type="text" name="desde_3" id="desde_3" placeholder="desde">
+                            <input type="text" name="hasta_3" id="hasta_3" placeholder="hasta">
+                        </td>
+                        <td>
+                            <input type="text" name="desde_4" id="desde_4" placeholder="desde">
+                            <input type="text" name="hasta_4" id="hasta_4" placeholder="hasta">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nombre de la Empresa</label></td>
+                        <td><input type="text" name="empresa" id="empresa"></td>
+                        <td><input type="text" name="empresa_2" id="empresa_2"></td>
+                        <td><input type="text" name="empresa_3" id="empresa_3"></td>
+                        <td><input type="text" name="empresa_4" id="empresa_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Direccion</label></td>
+                        <td><input type="text" name="dir" id="dir"></td>
+                        <td><input type="text" name="dir_2" id="dir_2"></td>
+                        <td><input type="text" name="dir_3" id="dir_3"></td>
+                        <td><input type="text" name="dir_4" id="dir_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Telefono</label></td>
+                        <td><input type="text" name="tel" id="tel"></td>
+                        <td><input type="text" name="tel_2" id="tel_2"></td>
+                        <td><input type="text" name="tel_3" id="tel_3"></td>
+                        <td><input type="text" name="tel_4" id="tel_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Puesto</label></td>
+                        <td><input type="text" name="puesto" id="puesto"></td>
+                        <td><input type="text" name="puesto_2" id="puesto_2"></td>
+                        <td><input type="text" name="puesto_3" id="puesto_3"></td>
+                        <td><input type="text" name="puesto_4" id="puesto_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Sueldo Mensual</label></td>
+                        <td>
+                            <input type="text" name="inicial" id="inicial" placeholder="inicial">
+                            <input type="text" name="final" id="final" placeholder="final">
+                        </td>
+                        <td>
+                            <input type="text" name="inicial_2" id="inicial_2" placeholder="inicial">
+                            <input type="text" name="final_2" id="final_2" placeholder="final">
+                        </td>
+                        <td>
+                            <input type="text" name="inicial_3" id="inicial_3" placeholder="inicial">
+                            <input type="text" name="final_3" id="final_3" placeholder="final">
+                        </td>
+                        <td>
+                            <input type="text" name="inicial_4" id="inicial_4" placeholder="inicial">
+                            <input type="text" name="final_4" id="final_4" placeholder="final">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Motivo de Separacion</label></td>
+                        <td><input type="text" name="motivo" id="motivo"></td>
+                        <td><input type="text" name="motivo_2" id="motivo_2"></td>
+                        <td><input type="text" name="motivo_3" id="motivo_3"></td>
+                        <td><input type="text" name="motivo_4" id="motivo_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nombre de su jefe</label></td>
+                        <td><input type="text" name="jefe" id="jefe"></td>
+                        <td><input type="text" name="jefe_2" id="jefe_2"></td>
+                        <td><input type="text" name="jefe_3" id="jefe_3"></td>
+                        <td><input type="text" name="jefe_4" id="jefe_4"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Puesto de su jefe</label></td>
+                        <td><input type="text" name="puesto_jefe" id="puesto_jefe"></td>
+                        <td><input type="text" name="puesto_jefe_2" id="puesto_jefe_2"></td>
+                        <td><input type="text" name="puesto_jefe_3" id="puesto_jefe_3"></td>
+                        <td><input type="text" name="puesto_jefe_4" id="puesto_jefe_4"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Podemos solicitar informes de usted</label>
+                            &nbsp;
+                            <input type="radio" name="informe" id="informe" value="si">si
+                            <input type="radio" name="informe" id="informe" value="no">no
+                        </td>
+                        <td colspan="4">
+                            <textarea name="comentarios_jefe" id="comentarios_jefe" placeholder="Comentarios de sus jefes"></textarea>
+                        </td>
+                    </tr>   
+                </table>
+            </fieldset>
+        </section>
+        <section id="refencias">
+            <fieldset>
+                <legend>Referencias</legend>
+                <table>
+                    <tr>
+                        <th><label>Nombre</label></th>
+                        <th><label>Direccion</label></th>
+                        <th><label>Telefono</label></th>
+                        <th><label>Ocupacion</label></th>
+                        <th><label>Tiempo de Conocerlo</label></th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="ref_name" id="ref_name"></th>
+                        <th><input type="text" name="ref_dir" id="ref_dir"></th>
+                        <th><input type="text" name="ref_tel" id="ref_tel"></th>
+                        <th><input type="text" name="ref_ocu" id="ref_ocu"></th>
+                        <th><input type="text" name="ref_known" id="ref_known"></th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="ref_name_2" id="ref_name_2"></th>
+                        <th><input type="text" name="ref_dir_2" id="ref_dir_2"></th>
+                        <th><input type="text" name="ref_tel_2" id="ref_tel_2"></th>
+                        <th><input type="text" name="ref_ocu_2" id="ref_ocu_2"></th>
+                        <th><input type="text" name="ref_known_2" id="ref_known_2"></th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="ref_name" id="ref_name_3"></th>
+                        <th><input type="text" name="ref_dir_3" id="ref_dir_3"></th>
+                        <th><input type="text" name="ref_tel_3" id="ref_tel_3"></th>
+                        <th><input type="text" name="ref_ocu_3" id="ref_ocu_3"></th>
+                        <th><input type="text" name="ref_known_3" id="ref_known_3"></th>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="generales">
+            <fieldset>
+                <legend>Datos Generales y Economicos</legend>
+                <table border="1px">
+                    <tr>
+                        <td>
+                            <label>¿Como supo de este Empleo?</label>
+                            <input type="radio" name="como_supo" id="como_supo_a" value="anuncio">Anuncio
+                            <input type="radio" name="como_supo" id="como_supo_o" value="otro">otro
+                            <input type="text" name="como_supo_otro" id="como_supo_otro" placeholder="anotelo">
+                        </td>
+                        <td>
+                            <label>¿Tiene usted otros ingresos?</label>
+                            <input type="radio" name="otros_ingresos" id="otros_ingresos_no" value="no">no
+                            <input type="radio" name="otros_ingresos" id="otros_ingresos_si" value="si">si
+                            <input type="text" name="desc_ingresos" id="desc_ingresos" placeholder="describalos">
+                            <input type="text" name="importe_mensual" id="importe_mensual" placeholder="Importe Mensual">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Tiene parientes trabajando en esta empresa?</label>
+                            <input type="radio" name="parientes_trabajando" id="parientes_trabajando_no" value="no">no
+                            <input type="radio" name="parientes_trabajando" id="parientes_trabajando_si" value="si">si
+                            <input type="text" name="nom_parientes_trabajando" id="nom_parientes_trabajando" placeholder="nombrelos">
+                        </td>
+                        <td>
+                            <label>¿Su conyuge trabaja?</label>
+                            <input type="radio" name="trabaja_conyuge" id="trabaja_conyuge_no" value="no">no
+                            <input type="radio" name="trabaja_conyuge" id="trabaja_conyuge_si" value="si">si
+                            <input type="text" name="donde_conyuge" id="donde_conyuge" placeholder="¿donde?">
+                            <input type="text" name="importe_mensual_conyuge" id="importe_mensual_conyuge" placeholder="Percepcion Mensual">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Ha estado afianzado?</label>
+                            <input type="radio" name="afianzado" id="afianzado_no" value="no">no
+                            <input type="radio" name="afianzado" id="afianzado_si" value="si">si
+                            <input type="text" name="nom_afianzado" id="nom_afianzado" placeholder="nombre de la Cia.">
+                        </td>
+                        <td>
+                            <label>¿Vive en casa propia?</label>
+                            <input type="radio" name="casa_propia" id="casa_propia_no" value="no">no
+                            <input type="radio" name="casa_propia" id="casa_propia_si" value="si">si
+                            <input type="text" name="valor_aprox" id="valor_aprox" placeholder="Valor Aproximado">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Ha estado afiliado a un sindicato?</label>
+                            <input type="radio" name="afiliado" id="afiliado_no" value="no">no
+                            <input type="radio" name="afiliado" id="afiliado_si" value="si">si
+                            <input type="text" name="nom_afiliado" id="nom_afiliado" placeholder="¿A Cual?">
+                        </td>
+                        <td>
+                            <label>¿Paga Renta?</label>
+                            <input type="radio" name="renta" id="renta_no" value="no">no
+                            <input type="radio" name="renta" id="renta_si" value="si">si
+                            <input type="text" name="renta_mensual" id="renta_mensual" placeholder="Renta Mensual">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Tiene seguro de Vida?</label>
+                            <input type="radio" name="seguro" id="seguro_no" value="no">no
+                            <input type="radio" name="seguro" id="seguro_si" value="si">si
+                            <input type="text" name="nom_seguro" id="nom_seguro" placeholder="nombre de la Cia.">
+                        </td>
+                        <td>
+                            <label>¿Tiene Automovil propio?</label>
+                            <input type="radio" name="auto_propia" id="auto_propia_no" value="no">no
+                            <input type="radio" name="auto_propia" id="auto_propia_si" value="si">si
+                            <input type="text" name="marca" id="marca" placeholder="Marca">
+                            <input type="text" name="modelo" id="modelo" placeholder="Modelo">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Puede Viajar?</label>
+                            <input type="radio" name="viajar" id="viajar_no" value="no">no
+                            <input type="radio" name="viajar" id="viajar_si" value="si">si
+                            <input type="text" name="razon_viajar" id="razon_viajar" placeholder="Razon">
+                        </td>
+                        <td>
+                            <label>¿Tiene Deudas?</label>
+                            <input type="radio" name="deudas" id="deudas_no" value="no">no
+                            <input type="radio" name="deudas" id="deudas_si" value="si">si
+                            <input type="text" name="who_deuda" id="who_deuda" placeholder="¿Con quien?">
+                            <input type="text" name="importe_deuda" id="importe_deuda" placeholder="Importe">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>¿Esta dispuesto a cambiar de lugar de residencia?</label>
+                            <input type="radio" name="residencia" id="residencia_no" value="no">no
+                            <input type="radio" name="residencia" id="residencia_si" value="si">si
+                            <input type="text" name="razon_residencia" id="razon_residencia" placeholder="Razon">
+                        </td>
+                        <td>
+                            <label>¿Cuanto abona mensualmente?</label>
+                            <input type="text" name="abono_mensual" id="abono_mensual">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Fecha en que podria presentarse a trabajar</label>
+                            <input type="date" name="fecha_presentarse" id="fecha_presentarse">
+                        </td>
+                        <td>
+                            <label>¿A cuanto ascienden sus gastos mensuales?</label>
+                            <input type="text" name="gastos_mensuales" id="gastos_mensuales">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+        <section id="cometarios">
+            <fieldset>
+                <legend>Comentarios del entrevistador y Firma</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <textarea name="comentarios_entrevistador" id="comentarios_entrevistador" ></textarea>
+                        </td>
+                        <td rowspan="2">
+                            <textarea name="firma_solicitante" id="firma_solicitante"  placeholder="Hago constar que mis respuestas son verdaderas"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea name="firma_entrevistador" id="firma_entrevistador"></textarea>
+                        </td>   
+                    </tr>
+                </table>
+            </fieldset>
+
+        </section>
+    </form>
+</body>
+</html>

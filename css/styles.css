@@ -1,0 +1,46 @@
+table{
+    background-color: #C9AA7B;
+    border-color: #473C2C;
+    border-collapse:collapse;
+    border:1px;
+    border-style: solid;
+    width:100%;
+}
+td{
+    border-color: #473C2C;
+}
+th{
+    border-color: #473C2C;
+}
+tr{
+    border-color: #473C2C;
+}
+legend{
+    color: #473C2C;
+    text-align: center;
+    background-color: #C9AA7B;
+}
+body{
+    background-color:  #E3BF8A;
+}
+label{
+    color: #473C2C;
+}
+text{
+    background-color: #63543D;
+}
+textarea{
+    background-color: #C9AA7B;
+    border-style: solid;
+    border-color: #63543D;
+}
+input{
+    background-color: #C9AA7B;
+    border-style: dotted;
+    text-emphasis-color: #63543D;
+    color: #473C2C;
+}
+fieldset{
+    background-color: #63543D;
+    border-color: #473C2C;
+}
